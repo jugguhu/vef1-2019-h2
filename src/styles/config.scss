@@ -1,7 +1,28 @@
 $max-width: 1200px;
 $gutter: 20px;
+$font-size: 16px;
+$font-main: "Lora", "Times New Roman", serif;
+$font-heading: "Roboto Mono", "Courier New", monospace;
+$transition: 300ms ease-in-out;
+//litir
+$black: #000;
+$light-gray: #999;
+$lighter-gray: #aaa;
+$white: #ccc;
+$neon-green: #2d2;
+$green: #1a1;
+$yellowish: #fcffd2;
+$pink: #cc9694;
 
-div {
-  villa-fjarlægðu-mig;
-  stylelint-ætti-að-kvarta;
+@mixin row() {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -($gutter/2);
+  margin-left: -($gutter/2);
+}
+
+@mixin columns($col: 1) {
+  width: ($col / 12 * 100) * 1%;
+  padding-right: $gutter/2;
+  padding-left: $gutter/2;
 }

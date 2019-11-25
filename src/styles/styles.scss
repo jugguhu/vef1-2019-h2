@@ -17,7 +17,7 @@ html { /* stylelint-disable-line */
   overflow-y: scroll; // alltaf hafa y skrollbar
 
   font-family: $font-main;
-  font-size: 16px;
+  font-size: $font-size;
 }
 
 img { /* stylelint-disable-line */
