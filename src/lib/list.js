@@ -42,4 +42,5 @@ export default class List {
       document.querySelector('.fyrirlestrar').appendChild(element);
     }
   }
+  
 }
