@@ -32,5 +32,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "stylelint": "^9.10.1",
     "stylelint-config-primer": "^2.2.11"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.3"
   }
 }
