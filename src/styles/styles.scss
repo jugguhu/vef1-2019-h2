@@ -24,6 +24,11 @@ img { /* stylelint-disable-line */
   max-width: 100%;
 }
 
+main {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
 // TODO import
 @import "header";
 

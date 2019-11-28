@@ -1,9 +1,33 @@
 .header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3*$gutter;
+    padding-bottom: 3*$gutter;
     background-image: url(../../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: $font-heading;
+    
+    &__span {
+        text-transform: uppercase;
+    }
+
+    &__title {
+
+    }
+
+    *:not(.protection) {
+        z-index: 1;
+    }
 }
 
-.header__span {
-}
-
-.header__title {
-}
+.protection {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
