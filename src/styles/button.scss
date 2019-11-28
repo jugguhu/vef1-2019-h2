@@ -1,6 +1,27 @@
-.button{
-    margin: $gutter/2;
+@import "config";
+
+.display {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    margin: 2*$gutter $gutter;
+    padding: $gutter/2;
+    background-color: $white;
     border: 0;
-    background-color: $light-grey;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: $font-heading;
+    font-weight: bold;
+
+    transition:
+        background-color $transition;
+
+    &:hover {
+        background-color: $neon-green;
+    }
+
+    &--active {
+        background-color: $neon-green;
+    }
 }

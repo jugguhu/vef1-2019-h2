@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="is">
+
 <head>
   <meta charset="utf-8">
   <title>Hópverkefni 2</title>
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <span class="header__span">Vefforritun</span>
@@ -15,21 +17,24 @@
     <div class="protection"></div>
   </header>
   <main>
-  <div class="display">
-    <button class="display__html">HTML</button>
-    <button class="display__css">CSS</button>
-    <button class="display__js">JavaScript</button>
-  </div>
-  <div class="fyrirlestrar">
-      <a href="fyrirlestur.html?slug=html-sagan">
-      <div class="fyrirlestrar__1">
-        <img src="img/thumb1.jpg">
-        <h2 class="fyrirlestrar__title">title</h2>
-        <h3 class="fyrirlestrar__category">category</h3>
+    <nav class="display">
+      <button class="display__html button">HTML</button>
+      <button class="display__css button">CSS</button>
+      <button class="display__js button">JavaScript</button>
+    </nav>
+    <section class="fyrirlestrar">
+      <div class="fyrirlestrar__col">
+        <a href="fyrirlestur.html?slug=<slug>">
+          <img src="img/thumb1.jpg">
+          <div class="fyrirlestrar__col__content">
+            <span class="fyrirlestrar__col__content__category">category</span>
+            <h1 class="fyrirlestrar__col__content__title">Title</h1>
+          </div>
+        </a>
       </div>
-      </a>
-  </div>
+    </section>
   </main>
   <script src="./dist/bundle.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,29 @@
+@import "config";
+
+.fyrirlestrar {
+    display: flex;
+
+    &__col {
+        display: flex;
+        background-color: $white;
+
+        a {
+            text-decoration: none;
+        }
+
+        &__content {
+            padding: $gutter/2;
+            color: $black;
+            font-family: $font-heading;
+
+            &__category {
+                font-size: 1rem;
+                text-transform: uppercase;
+            }
+
+            &__title {
+                font-size: 2rem;
+            }
+        }
+    }
+}
