@@ -1,18 +1,21 @@
 import { empty, get_json, get_slug } from './helpers';
-import { load, save, desave } from './storage';
+import { load, save, desave, finished } from './storage';
 
 const slug = get_slug();
 
 function fin() {
-  if (slug !== 0) {
-    const button = document.querySelector('.footer__finish');
-    if (button.classList.contains('.footer__finish--finished')) {
-      desave(slug);
-      button.classList.remove('.footer__finish--finished');
-    } else {
-      save(slug, 1);
-      button.classList.add('.footer__finish--finished');
-    }
+  const finish = document.querySelector('.footer__finish');
+  if (finished(slug)) {
+    desave(slug);
+    empty(finish);
+    finish.appendChild(document.createTextNode('Klára fyrirlestur'));
+    finish.classList.remove('footer__finish--finished');
+  } else {
+    save(slug, 1);
+    console.log(finished(slug));
+    empty(finish);
+    finish.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
+    finish.classList.add('footer__finish--finished');
   }
 }
 
@@ -62,6 +65,7 @@ function makeContent(cont) {
         iframe.setAttribute('src', elem.data);
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allowfullscreen', '0');
+        iframe.classList.add('fyrirlestur__yt');
 
         section.appendChild(iframe);
         break;
@@ -70,6 +74,7 @@ function makeContent(cont) {
         for (const paragraph of text) {
           const p = document.createElement('p');
           p.appendChild(document.createTextNode(paragraph));
+          p.classList.add('fyrirlestur__text');
 
           section.appendChild(p);
         }
@@ -78,10 +83,12 @@ function makeContent(cont) {
         const quote = document.createElement('blockquote');
 
         quote.appendChild(document.createTextNode(elem.data));
+        quote.classList.add('fyrirlestur__quote');
 
         if (elem.hasOwnProperty('attribute')) {
           const cite = document.createElement('cite');
           cite.appendChild(document.createTextNode(elem.attribute));
+          cite.classList.add('fyrirlestur__cite');
 
           quote.appendChild(cite);
         }
@@ -93,7 +100,9 @@ function makeContent(cont) {
         const image = document.createElement('img');
 
         image.setAttribute('src', elem.data);
-
+        figure.classList.add('fyrirlestur__fig');
+        image.classList.add('fyrirlestur__img');
+        
         figure.appendChild(image);
         if (elem.hasOwnProperty('caption')) {
           const caption = document.createElement('figcaption');
@@ -107,12 +116,17 @@ function makeContent(cont) {
       case 'heading':
         const h2 = document.createElement('h2');
         h2.appendChild(document.createTextNode(elem.data));
+        h2.classList.add('fyrirlestur__heading');
+
+        section.appendChild(h2);
         break;
       case 'list':
         const ul = document.createElement('ul');
+        ul.classList.add('fyrirlestur__list');
         for (const text of elem.data) {
           const li = document.createElement('li');
           li.appendChild(document.createTextNode(text));
+          li.classList.add('fyrirlestur__list-item');
 
           ul.appendChild(li);
         }
@@ -121,15 +135,21 @@ function makeContent(cont) {
       case 'code':
         const pre = document.createElement('pre');
         pre.appendChild(document.createTextNode(elem.data));
+        pre.classList.add('fyrirlestur__code');
         section.appendChild(pre);
         break;
     } 
   }
 }
 
+function makeFooter() {
+  const finish = document.querySelector('.footer__finish');
+
+}
 
 function makeLecture(data) {
   const lecture = find(data.lectures, slug);
   makeHeader(lecture);
   makeContent(lecture.content);
+  makeFooter();
 }
