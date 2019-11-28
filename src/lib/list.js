@@ -2,7 +2,7 @@ import { empty, get_json, el } from './helpers';
 
 export default class List {
   constructor() {
-    this.container = document.querySelector('.list');
+    this.container = document.querySelector('.fyrirlestrar');
     this.lectures = 'lectures.json';
   }
 
@@ -24,6 +24,7 @@ export default class List {
 
   showLectures(data) {
     for (let i of data) { //eslint-disable-line
+      const lectureURL = `fyrirlestur.html?slug=${i.slug}`;
       const element = el('div',
         el('a',
           el('img'),
@@ -37,6 +38,7 @@ export default class List {
       if (i.thumbnail) {
         element.querySelector('img').setAttribute('src', i.thumbnail);
       }
+      element.querySelector('a').setAttribute('href', lectureURL);
       document.querySelector('.fyrirlestrar').appendChild(element);
     }
   }
