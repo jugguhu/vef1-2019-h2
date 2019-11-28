@@ -13,3 +13,12 @@ export function get_json(func) {
       func(data);
     });
 }
+
+export function get_slug() {
+  const url = location.search;
+  const searchParam = new URLSearchParams(url);
+  if (searchParam.has('slug')) {
+    return searchParam.get('slug');
+  }
+  return 0;
+}
