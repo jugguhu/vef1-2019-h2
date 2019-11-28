@@ -4,6 +4,7 @@ export default class List {
   constructor() {
     this.container = document.querySelector('.fyrirlestrar');
     this.lectures = 'lectures.json';
+    this.nav = document.querySelector('display');
   }
 
   load() {
@@ -42,5 +43,17 @@ export default class List {
       document.querySelector('.fyrirlestrar').appendChild(element);
     }
   }
-  
+
+  toggleButton(e) {
+    const button = e.target;
+    button.classList.toggle('button--active');
+    console.log(button);
+  }
+
+  init(page) {
+    const buttons = page.querySelectorAll('.button');
+    for(let i of buttons){ //eslint-disable-line
+      i.addEventListener('click', e => this.toggleButton(e));
+    }
+  }
 }

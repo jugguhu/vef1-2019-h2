@@ -123,7 +123,7 @@ function makeContent(cont) {
         pre.appendChild(document.createTextNode(elem.data));
         section.appendChild(pre);
         break;
-    } 
+    }
   }
 }
 
