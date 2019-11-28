@@ -138,7 +138,7 @@ function makeContent(cont) {
         pre.classList.add('fyrirlestur__code');
         section.appendChild(pre);
         break;
-    } 
+    }
   }
 }
 

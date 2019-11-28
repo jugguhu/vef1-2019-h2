@@ -1,0 +1,10 @@
+.fyrirlestur > * {
+  margin-top: $gutter;
+}
+
+.fyrirlestur {
+  &__yt {
+    width: 100%;
+    height: 100%;
+  }
+}

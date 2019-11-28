@@ -7,6 +7,18 @@ export function load() {
   return fin;
 }
 
+export function finished(sl) {
+  const fin = load();
+  for (const ob of fin) {
+    if (ob.slug === sl) {
+      if (ob.value === 1) {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}
+
 function has(arr, sl) {
   for (const ob of arr) {
     if (ob.slug === sl) {
@@ -27,13 +39,20 @@ export function desave(slug) {
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
 }
 
-export function save(slug, value) {
+export function save(slug) {
   const fin = load();
+  const value = 1;
 
   if (!has(fin, slug)) {
     fin.push({
       slug, value,
     });
+  } else {
+    for (const sl of fin) {
+      if (sl.slug === slug) {
+        sl.value = value;
+      }
+    }
   }
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
 }
