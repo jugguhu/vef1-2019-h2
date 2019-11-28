@@ -1,11 +1,18 @@
 import { empty, get_json, get_slug } from './helpers';
-import { load, save } from './storage';
+import { load, save, desave } from './storage';
 
 const slug = get_slug();
 
 function fin() {
   if (slug !== 0) {
-    save(slug, 1);
+    const button = document.querySelector('.footer__finish');
+    if (button.classList.contains('.footer__finish--finished')) {
+      desave(slug);
+      button.classList.remove('.footer__finish--finished');
+    } else {
+      save(slug, 1);
+      button.classList.add('.footer__finish--finished');
+    }
   }
 }
 
@@ -27,11 +34,17 @@ function find(lects, sl) {
 
 function makeHeader(data) {
   const header = document.querySelector('.header');
-  const img = header.querySelector('.header__img');
   const category = header.querySelector('.header__category');
   const title = header.querySelector('.header__title');
 
-  img.setAttribute('src', data.image);
+  if (data.image === "img/code.jpg") {
+    header.classList.add('header--code');
+  }
+
+  if (data.image === "img/code2.jpg") {
+    header.classList.add('header--code2');
+  }
+
   empty(title);
   empty(category);
   title.appendChild(document.createTextNode(data.title));

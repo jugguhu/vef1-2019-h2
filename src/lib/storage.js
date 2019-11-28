@@ -16,6 +16,17 @@ function has(arr, sl) {
   }
 }
 
+export function desave(slug) {
+  const fin = load();
+
+  for (const sl of fin) {
+    if (sl.slug === slug) {
+      sl.value = 0;
+    }
+  }
+  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
+}
+
 export function save(slug, value) {
   const fin = load();
 
@@ -25,7 +36,6 @@ export function save(slug, value) {
     });
   }
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
-  console.log(fin);
 }
 
 export function clear() {
