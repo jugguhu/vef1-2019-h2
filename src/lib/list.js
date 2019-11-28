@@ -1,4 +1,4 @@
-import { empty } from './helpers';
+import { empty, get_json } from './helpers';
 
 export default class List {
   constructor() {
@@ -8,15 +8,20 @@ export default class List {
 
   load() {
     // empty(this.container);
-    console.log(this.getLectures());
+    this.getLectures();
   }
 
   getLectures() {
-    async function get() {
-      const result = await fetch(this.lectures);
-      const data = await result.json();
-      return data;
-    }
-    return get();
+    fetch(this.lectures)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Non 200 status');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data.lectures);
+      });
+
   }
 }
