@@ -8,15 +8,15 @@ export default class List {
 
   load() {
     // empty(this.container);
-    this.getLectures()
-      .then((data) => console.log(data));
+    console.log(this.getLectures());
   }
 
   getLectures() {
-    return async function get() {
+    async function get() {
       const result = await fetch(this.lectures);
       const data = await result.json();
       return data;
-    };
+    }
+    return get();
   }
 }
