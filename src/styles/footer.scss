@@ -1,0 +1,32 @@
+@import "config";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-family: monospace;
+    color: $black;
+    font-size: 1rem;
+
+    &__finish {
+        margin: 2*$gutter auto;
+        color: $black;
+        border: none;
+        background-color: white;
+        font-family: monospace;
+        font-size: 1rem;
+    }
+
+    &__back {
+        text-decoration: none;
+
+        &:hover{
+            color: $black;
+        }
+        
+        &:visited {
+            color: $black;
+        }
+    }
+}
