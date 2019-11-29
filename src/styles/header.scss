@@ -5,23 +5,24 @@
   display: flex;
   padding-top: 5*$gutter;
   padding-bottom: 5*$gutter;
+
+  font-family: $font-heading;
+
   flex-direction: column;
   align-items: center;
-  
-  
-  background-image: url(../img/header.jpg);
+
+  background-image: url("../img/header.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  font-family: $font-heading;
-  
+
   &--code {
-    background-image: url(../img/code.jpg)
+    background-image: url("../img/code.jpg");
   }
 
   &--code2 {
-    background-image: url(../img/code2.jpg)
+    background-image: url("../img/code2.jpg");
   }
-  
+
   &__span {
     font-size: 1rem;
     text-transform: uppercase;
