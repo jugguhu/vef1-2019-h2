@@ -4,27 +4,26 @@
   display: flex;
   margin: 0 auto;
   font-family: monospace;
-  flex-direction: column;
-  align-items: center;
   font-size: 1rem;
   color: $black;
-  
+  flex-direction: column;
+  align-items: center;
 
   &__finish {
     margin: 2*$gutter auto;
+    font-family: monospace;
     font-size: 1rem;
     color: $black;
     background-color: $white;
-    font-family: monospace;
     border: 0;
-        
+
     &:hover {
       cursor: pointer;
     }
 
     &--finished {
       color: $neon-green;
-      }
+    }
   }
 
   &__back {
@@ -34,7 +33,7 @@
     &:hover {
       color: $black;
     }
-        
+
     &:visited {
       color: $black;
     }

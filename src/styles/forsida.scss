@@ -10,10 +10,10 @@
   flex-wrap: wrap;
 
   &__col {
-    display: flex;  
+    display: flex;
     height: 15*$gutter;
     margin-bottom: 2*$gutter;
-  
+
     @include columns(4);
     overflow-y: hidden;
     font-size: 1rem;
@@ -22,7 +22,7 @@
       @include columns(12);
     }
 
-    a {
+    a {/*stylelint-disable-line*/
       width: 100%;
       object-fit: contain;
     }
@@ -66,14 +66,8 @@
 }
 
 .noimage {
-<<<<<<< HEAD
-  
+
   @media (max-width: 800px) {
-    height: 4*$gutter;
+    height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
   }
-=======
-    @media (max-width: 800px) {
-        height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
-    }
->>>>>>> 05572b09ce04bbe88bc0ddd8569b3595ea8442e7
 }

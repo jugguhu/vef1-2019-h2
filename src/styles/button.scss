@@ -8,13 +8,13 @@
 .button {
   padding: $gutter/2;
   margin: 2*$gutter $gutter;
-  background-color: $white;
   font-family: $font-heading;
-  border: 0;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 10px;
   color: $black;
+  background-color: $white;
+  border: 0;
+  border-radius: 10px;
   box-shadow: 2px 2px $light-gray;
 
   transition:
