@@ -1,34 +1,35 @@
 @import "config";
 
 .display {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .button {
-    margin: 2*$gutter $gutter;
-    padding: $gutter/2;
-    background-color: $white;
-    border: 0;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: $font-heading;
-    font-weight: bold;
-    color: black;
-    box-shadow: 2px 2px $light-gray;
+  margin: 2*$gutter $gutter;
+  padding: $gutter/2;
+  background-color: $white;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: $font-heading;
+  font-weight: bold;
+  color: black;
+  box-shadow: 2px 2px $light-gray;
 
-    transition:
-        background-color $transition,
-        box-shadow $transition;
+  transition:
+  background-color $transition,
+  box-shadow $transition;
 
+  &:hover {
+    background-color: $lighter-gray;
+    cursor: pointer;
+    box-shadow: 2px 2px #666;
+  }
+
+  &--active {
+    background-color: $neon-green;
     &:hover {
-        background-color: $lighter-gray;
-        cursor: pointer;
-        box-shadow: 2px 2px #666;
-      }
-
-      &--active {
-        background-color: $neon-green;
-        &:hover {
-            background-color: $neon-green;
-        }
+      background-color: $neon-green;
     }
+  }
+}
