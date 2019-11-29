@@ -12,7 +12,7 @@
     "sass": "node-sass --source-map-embed ./src/styles/styles.scss ./dist/styles.css",
     "sass-watch": "node-sass --source-map-embed --watch --recursive src/styles/styles.scss ./dist/styles.css",
     "test": "npm-run-all eslint stylelint",
-    "dev": "npm-run-all --parallel sass sass-watch rollup-watch browser-sync"
+    "dev": "npm-run-all --parallel sass sass-watch rollup rollup-watch browser-sync"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +20,8 @@
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
-    "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.26.7",
+    "core.js": "^0.4.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
