@@ -3,13 +3,11 @@
 .header {
   position: relative;
   display: flex;
-  flex-direction: column;
   height: 15*$gutter;
+  font-family: $font-heading;
+  flex-direction: column;
   justify-content: center;
 
-  font-family: $font-heading;
-
-  flex-direction: column;
   align-items: center;
 
   background-image: url("../img/header.jpg");

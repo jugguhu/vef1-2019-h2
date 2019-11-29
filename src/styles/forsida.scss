@@ -27,7 +27,7 @@
       @include columns(12);
     }
 
-    a {/*stylelint-disable-line*/
+    &__a {/*stylelint-disable-line*/
       width: 100%;
       object-fit: contain;
     }
@@ -42,7 +42,7 @@
         background-color: $lighter-gray;
       }
 
-      img {
+      &__img {
         width: 100%;
       }
 
@@ -73,4 +73,4 @@
   @media (max-width: 800px) {
     height: 4.25*$gutter;
   }
-}        
+}

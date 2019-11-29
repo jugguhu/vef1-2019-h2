@@ -40,7 +40,7 @@ function makeHeader(data) {
 function makeContent(cont) {
   const section = document.querySelector('.fyrirlestur');
   empty(section);
-  for (const elem of cont) {
+  for (const elem of cont) { //eslint-disable-line
     switch (elem.type) {
       case 'youtube': {
         const div = document.createElement('div');
@@ -59,7 +59,7 @@ function makeContent(cont) {
       }
       case 'text': {
         const pars = elem.data.split('\n');
-        for (const paragraph of pars) {
+        for (const paragraph of pars) { //eslint-disable-line
           const p = document.createElement('p');
           p.appendChild(document.createTextNode(paragraph));
           p.classList.add('fyrirlestur__text');
@@ -116,7 +116,7 @@ function makeContent(cont) {
       case 'list': {
         const ul = document.createElement('ul');
         ul.classList.add('fyrirlestur__list');
-        for (const item of elem.data) {
+        for (const item of elem.data) { //eslint-disable-line
           const li = document.createElement('li');
           li.appendChild(document.createTextNode(item));
           li.classList.add('fyrirlestur__list-item');
@@ -150,7 +150,7 @@ function makeFooter() {
 }
 
 function find(lects, sl) {
-  for (const lect of lects) {
+  for (const lect of lects) { //eslint-disable-line
     if (lect.slug === sl) {
       return lect;
     }
