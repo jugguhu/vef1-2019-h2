@@ -15,7 +15,7 @@
  - [aok10](https://github.com/aok10)
  ---
 ## Að keyra verkefnið
-Verkefnið er skrifað í SASS og JavaScript, notast er við [node.js](https://nodejs.org/en/). Node-sass er notað til að þýða .scss skrár en rollup ásamt babel til að þýða JavaScript.
+Verkefnið er skrifað í SASS og JavaScript, notast er við [node.js](https://nodejs.org/en/). Node-sass er notað til að þýða .scss skrár en rollup til að pakka JavaScirpt ásamt babel til að transpila JavaScript.
 Alla pakka notaða í verkefninu má finna í package.json.
 Til að keyra forritið þarf að skrifa í rót verkefnis
 ```bash
