@@ -1,17 +1,17 @@
 import { empty, get_json, get_slug } from './helpers';
-import { load, save, desave, finished } from './storage';
+import { load, save, has } from './storage';
 
 const slug = get_slug();
 
 function fin() {
   const finish = document.querySelector('.footer__finish');
-  if (finished(slug)) {
-    desave(slug);
+  if (has(slug) >=  0) {
+    save(slug);
     empty(finish);
     finish.appendChild(document.createTextNode('Klára fyrirlestur'));
     finish.classList.remove('footer__finish--finished');
   } else {
-    save(slug, 1);
+    save(slug);
     empty(finish);
     finish.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
     finish.classList.add('footer__finish--finished');
@@ -105,6 +105,7 @@ function makeContent(cont) {
         figure.appendChild(image);
         if (elem.hasOwnProperty('caption')) {
           const caption = document.createElement('figcaption');
+          caption.classList.add('fyrirlestur__figcap');
           caption.appendChild(document.createTextNode(elem.caption));
 
           figure.appendChild(caption);
@@ -143,7 +144,11 @@ function makeContent(cont) {
 
 function makeFooter() {
   const finish = document.querySelector('.footer__finish');
-
+  if (has(slug) >= 0) {
+    finish.classList.add('footer__finish--finished');
+    empty(finish);
+    finish.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
+  }
 }
 
 function makeLecture(data) {

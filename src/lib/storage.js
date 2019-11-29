@@ -7,52 +7,27 @@ export function load() {
   return fin;
 }
 
-export function finished(sl) {
-  const fin = load();
-  for (const ob of fin) {
-    if (ob.slug === sl) {
-      if (ob.value === 1) {
-        return 1;
-      }
+export function has(sl) {
+  const arr = load();
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i].slug === sl) {
+      return i;
     }
   }
-  return 0;
-}
-
-function has(arr, sl) {
-  for (const ob of arr) {
-    if (ob.slug === sl) {
-      return 1;
-    }
-    return 0;
-  }
-}
-
-export function desave(slug) {
-  const fin = load();
-
-  for (const sl of fin) {
-    if (sl.slug === slug) {
-      sl.value = 0;
-    }
-  }
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
+  return -1;
 }
 
 export function save(slug) {
   const fin = load();
-  const value = 1;
+  const n = has(slug);
+  console.log(fin);
 
-  if (!has(fin, slug)) {
+  if (n === -1) {
     fin.push({
-      slug, value,
+      slug,
     });
   } else {
-    for (const sl of fin) {
-      if (sl.slug === slug) {
-        sl.value = value;
-      }
-    }
+    fin.splice(n, 1);
   }
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(fin));
 }

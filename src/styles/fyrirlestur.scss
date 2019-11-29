@@ -1,10 +1,58 @@
+@import "config";
+
+main {
+  max-width: $max-width + 2*$gutter;
+}
+
 .fyrirlestur > * {
-  margin-top: $gutter;
+  padding: 0 $gutter;
+  margin: $gutter/2 0;
 }
 
 .fyrirlestur {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: $gutter 0;
   &__yt {
     width: 100%;
     height: 100%;
+  }
+
+  &__text {
+    line-height: 2;
+    font-size: $font-size;
+  }
+
+  &__fig {
+    width: 100%;
+  }
+
+  &__figcap {
+    font-style: italic;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__quote {
+    background-color: $lighter-gray;
+    padding: $gutter;
+  }
+
+  &__cite {
+    display: block;
+    margin-top: $gutter; 
+    font-style: italic;
+  }
+
+  &__heading {
+    margin-top: $gutter;
+    font-family: $font-heading;
+  }
+
+  &__list-item {
+    margin-bottom: $gutter;
   }
 }
