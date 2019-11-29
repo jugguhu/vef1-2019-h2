@@ -4,18 +4,16 @@ export function empty(element) {
   }
 }
 
-export function get_json(func) {
+export function getJson(func) {
   fetch('lectures.json')
-    .then((response) => {
-      return response.json();
-    })
+    .then(response => response.json())
     .then((data) => {
       func(data);
     });
 }
 
-export function get_slug() {
-  const url = location.search;
+export function getSlug() {
+  const url = window.location.search;
   const searchParam = new URLSearchParams(url);
   if (searchParam.has('slug')) {
     return searchParam.get('slug');
