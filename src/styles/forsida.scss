@@ -2,6 +2,12 @@
 
 .saved {
   color: $green;
+  font-size: $font-size*3;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  bottom: 50%;
+  text-align: center;
 }
 
 .fyrirlestrar {
@@ -55,7 +61,6 @@
                 
       &__category {
         text-transform: uppercase;
-
         font-size: 1rem;
       }
     
