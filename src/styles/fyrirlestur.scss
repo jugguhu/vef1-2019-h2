@@ -7,6 +7,9 @@ main {
 .fyrirlestur > * {
   padding: 0 $gutter;
   margin: $gutter/2 0;
+  @media (min-width: $max-width) {
+    padding: 0;
+  }
 }
 
 .fyrirlestur {
@@ -14,6 +17,10 @@ main {
   flex-direction: column;
   margin: 0 auto;
   padding: $gutter 0;
+  @media (min-width: $max-width) {
+    width: 23/36 * 100%;
+    padding: 0;
+  }
 
   &__aspect {
     height: 0;
@@ -30,6 +37,9 @@ main {
 
     padding: 0 $gutter;
     margin: $gutter/2 0;
+    @media (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   &__text {
@@ -52,6 +62,9 @@ main {
   &__quote {
     background-color: $lighter-gray;
     padding: $gutter;
+    @media (min-width: $max-width) {
+      margin: 0 1*-$gutter;
+    }
   }
 
   &__cite {
@@ -67,5 +80,10 @@ main {
 
   &__list-item {
     margin-bottom: $gutter;
+  }
+
+  &__code {
+    font-family: $font-heading;
+    line-height: 1.25;
   }
 }
