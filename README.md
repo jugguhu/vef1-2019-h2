@@ -33,10 +33,10 @@ npm run test
 JavaScript og SASS skrár eru geymdar í [src](src) möppu.
 Í lib möppu má finna JavaScript skrárnar notaðar. [helpers.js](src/lib/helpers.js) inniheldur hjálparföll líkt og empty sem og getJSON sem sækir JSON og skilar promise og getSlug sem skilar slug síðunnar sem skoðað er. el fallið býr til element (alveg eins og í sýnilausn verkefnis 10). [Storage.js](src/lib/storage.js) inniheldur þau JavaScript föll sem við nýtum til að vista og afvista fyrirlestra sem kláraðir eru. Til að sækja vistaða fyrirlestra nægir að kalla á loadSaved og til að vista fyrirlestra nægir að kalla á save(slug). [List.js](src/lib/list.js) inniheldur fall til að sækja JSON skrár og skilar forsíðunni. [Lectures.js](src/lib/lectures.js) gerir hið sama og birtir fyrirlestur á nýrri síðu þegar ýtt er á hann á forsíðu. Innan fyrirlestra er hægt að haka við hvort fyrirlestur sé kláraður eða ekki, þeir fyrirlestrar sem eru kláraðir eru geymdir í storage og hakað við þá á forsíðu. Storage inniheldur "has" fall sem skoðar hvort fyrirlestur sé kláraður eða ekki, þetta er notað í list.js
 
-Í [styles](src/styles) má finna SASS skrár notaðar. 
--[button.scss](src/styles/button.scss) inniheldur stíla fyrir takkana þrjá á forsíðu. 
--[config.scss](src/styles/config.scss) inniheldur grunnlitina, leturgerðarfjölskyldur, mixin fyrir grid og önnur grunnskilyrði.
--[footer.scss](src/styles/footer.scss) er fyrir neðstu takkana á fyrirlestrarsíðum.
--[header.scss](src/styles/header.scss) er fyrir haus á forsíðu.
--[fyrirlestur.scss](src/styles/fyrirlestur.scss) er fyrir fyrirlestrarsíðurnar
--[forsida.scss](src/styles/styles.scss) er grunnsrkain sem importar öllum hinum skránum.
+Í [styles](src/styles) má finna SASS skrár notaðar: 
+- [button.scss](src/styles/button.scss) inniheldur stíla fyrir takkana þrjá á forsíðu. 
+- [config.scss](src/styles/config.scss) inniheldur grunnlitina, leturgerðarfjölskyldur, mixin fyrir grid og önnur grunnskilyrði.
+- [footer.scss](src/styles/footer.scss) er fyrir neðstu takkana á fyrirlestrarsíðum.
+- [header.scss](src/styles/header.scss) er fyrir haus á forsíðu.
+- [fyrirlestur.scss](src/styles/fyrirlestur.scss) er fyrir fyrirlestrarsíðurnar
+- [forsida.scss](src/styles/styles.scss) er grunnsrkain sem importar öllum hinum skránum.
