@@ -22,6 +22,10 @@
         &--finished {
           color: $green;
         }
+
+        &:hover {
+          cursor: pointer;
+        }
     }
 
     &__back {

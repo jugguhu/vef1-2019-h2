@@ -59,14 +59,18 @@ function makeContent(cont) {
   for (const elem of cont) {
     switch (elem.type) {
       case 'youtube':
+        const div = document.createElement('div');
         const iframe = document.createElement('iframe');
+
+        div.classList.add('fyrirlestur__aspect');
 
         iframe.setAttribute('src', elem.data);
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allowfullscreen', '0');
         iframe.classList.add('fyrirlestur__yt');
 
-        section.appendChild(iframe);
+        div.appendChild(iframe);
+        section.appendChild(div);
         break;
       case 'text':
         const text = elem.data.split('\n');
