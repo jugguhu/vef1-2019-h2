@@ -29,12 +29,14 @@ export default class List {
       const lectureURL = `fyrirlestur.html?slug=${i.slug}`;
       const element = el('div',
         el('a',
+        el('div',
           el('img'),
           el('div',
             el('span', i.category),
-            el('h1', i.title))));
+            el('h1', i.title)))));
       element.classList.add('fyrirlestrar__col');
-      element.querySelector('div').classList.add('fyrirlestrar__col__content');
+      element.querySelector('div').classList.add('fyrirlestrar__col__content')
+      element.querySelector('div').querySelector('div').classList.add('fyrirlestrar__col__content__text');
       element.querySelector('span').classList.add('fyrirlestrar__col__content__category');
       element.querySelector('h1').classList.add('fyrirlestrar__col__content__title');
       if (i.thumbnail) {
@@ -51,7 +53,7 @@ export default class List {
     const items = Array.from(buttons).filter(i => i.classList.contains('button--active'))
       .map(i =>i.textContent.toLowerCase());
     if(items.length !== 0) {
-      return json.filter(i.lectures => items.contains(i.lectures.category));
+      // return json.filter(i.lectures => items.contains(i.lectures.category));
     }
     return json;
   }
