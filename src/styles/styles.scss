@@ -18,6 +18,8 @@ html { /* stylelint-disable-line */
 
   font-family: $font-main;
   font-size: $font-size;
+
+  min-width: 500px;
 }
 
 img { /* stylelint-disable-line */

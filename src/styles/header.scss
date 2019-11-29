@@ -3,8 +3,9 @@
 .header {
   position: relative;
   display: flex;
-  padding-top: 5*$gutter;
-  padding-bottom: 5*$gutter;
+  flex-direction: column;
+  height: 15*$gutter;
+  justify-content: center;
 
   font-family: $font-heading;
 
@@ -13,7 +14,7 @@
 
   background-image: url("../img/header.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
   &--code {
     background-image: url("../img/code.jpg");
@@ -30,6 +31,7 @@
 
   &__title {
     font-size: 3rem;
+    text-align: center;
   }
 
   *:not(.protection) {
