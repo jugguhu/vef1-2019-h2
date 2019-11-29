@@ -12,8 +12,7 @@ export default class List {
     empty(this.container);
     this.getLectures(this.lectures)
       .then(data => this.filterLectures(data))
-      .then(data => this.showLectures(data))
-      .then(data => this.showSaved(data));
+      .then(data => this.showLectures(data));
   }
 
   getLectures(json) {
@@ -44,11 +43,13 @@ export default class List {
       if (i.thumbnail) {
         element.querySelector('img').setAttribute('src', i.thumbnail);
       }
+      if (this.isSaved(i.slug)) {
+        const checkmark = el('p', '✓');
+        checkmark.classList.add('saved');
+        element.querySelector('.fyrirlestrar__col__content__text').appendChild(checkmark);
+      }
       element.querySelector('a').setAttribute('href', lectureURL);
       document.querySelector('.fyrirlestrar').appendChild(element);
-      if (this.isSaved(i.slug)) {
-        element.classList.add('saved');
-      }
     }
   }
 
