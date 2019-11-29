@@ -1,6 +1,8 @@
 @import "config";
 .saved{
     color: $green;
+    display: flex;
+    align-self: flex-end;
 }
 .fyrirlestrar {
     margin: 0 -$gutter/2;

@@ -1,5 +1,5 @@
 import { empty, el } from './helpers';
-import { loadSaved } from './storage';
+import { loadSaved, has } from './storage';
 
 export default class List {
   constructor() {
@@ -43,7 +43,7 @@ export default class List {
       if (i.thumbnail) {
         element.querySelector('img').setAttribute('src', i.thumbnail);
       }
-      if (this.isSaved(i.slug)) {
+      if (has(i.slug) >= 0) {
         const checkmark = el('p', '✓');
         checkmark.classList.add('saved');
         element.querySelector('.fyrirlestrar__col__content__text').appendChild(checkmark);
