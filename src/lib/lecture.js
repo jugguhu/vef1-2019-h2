@@ -12,7 +12,6 @@ function fin() {
     finish.classList.remove('footer__finish--finished');
   } else {
     save(slug, 1);
-    console.log(finished(slug));
     empty(finish);
     finish.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
     finish.classList.add('footer__finish--finished');
@@ -37,7 +36,7 @@ function find(lects, sl) {
 
 function makeHeader(data) {
   const header = document.querySelector('.header');
-  const category = header.querySelector('.header__category');
+  const category = header.querySelector('.header__span');
   const title = header.querySelector('.header__title');
 
   if (data.image === "img/code.jpg") {
