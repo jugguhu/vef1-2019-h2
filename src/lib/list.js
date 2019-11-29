@@ -1,4 +1,5 @@
-import { empty, get_json, el } from './helpers';
+import { empty, el } from './helpers';
+import { loadSaved } from './storage';
 
 export default class List {
   constructor() {
@@ -11,7 +12,8 @@ export default class List {
     empty(this.container);
     this.getLectures(this.lectures)
       .then(data => this.filterLectures(data))
-      .then(data => this.showLectures(data.lectures));
+      .then(data => this.showLectures(data))
+      .then(data => this.showSaved(data));
   }
 
   getLectures(json) {
@@ -29,12 +31,14 @@ export default class List {
       const lectureURL = `fyrirlestur.html?slug=${i.slug}`;
       const element = el('div',
         el('a',
-          el('img'),
           el('div',
-            el('span', i.category),
-            el('h1', i.title))));
+            el('img'),
+            el('div',
+              el('span', i.category),
+              el('h1', i.title)))));
       element.classList.add('fyrirlestrar__col');
-      element.querySelector('div').classList.add('fyrirlestrar__col__content');
+      element.querySelector('div').classList.add('fyrirlestrar__col__content')
+      element.querySelector('div').querySelector('div').classList.add('fyrirlestrar__col__content__text');
       element.querySelector('span').classList.add('fyrirlestrar__col__content__category');
       element.querySelector('h1').classList.add('fyrirlestrar__col__content__title');
       if (i.thumbnail) {
@@ -42,17 +46,28 @@ export default class List {
       }
       element.querySelector('a').setAttribute('href', lectureURL);
       document.querySelector('.fyrirlestrar').appendChild(element);
+      if (this.isSaved(i.slug)) {
+        element.classList.add('saved');
+      }
     }
   }
 
   filterLectures(json) {
-    // empty(this.container);
-    const item = document.querySelectorAll('.button');
-    const array = json.lectures;
-    for (let i of item) { //eslint-disable-line
-      console.log(i.textContent);
+    const buttons = document.querySelectorAll('.button');
+    const items = Array.from(buttons).filter(i => i.classList.contains('button--active'))
+      .map(i => i.textContent.toLowerCase());
+    if (items.length !== 0) {
+      return json.lectures.filter(i => items.includes(i.category));
     }
-    return json;
+    return json.lectures;
+  }
+
+  isSaved(outerSlug) {
+    const saved = loadSaved();
+    for (let i of saved) { //eslint-disable-line
+      if (i.slug === outerSlug) return true;
+    }
+    return false;
   }
 
   toggleButton(e) {
@@ -65,7 +80,7 @@ export default class List {
     for (let i of buttons) { //eslint-disable-line
       i.addEventListener('click', (e) => {
         this.toggleButton(e);
-        this.filterLectures();
+        this.load();
       });
     }
   }
