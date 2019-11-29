@@ -47,10 +47,11 @@ export default class List {
 
   filterLectures(json) {
     // empty(this.container);
-    const item = document.querySelectorAll('.button');
-    const array = json.lectures;
-    for (let i of item) { //eslint-disable-line
-      console.log(i.textContent);
+    const buttons = document.querySelectorAll('.button');
+    const items = Array.from(buttons).filter(i => i.classList.contains('button--active'))
+      .map(i =>i.textContent.toLowerCase());
+    if(items.length !== 0) {
+      return json.filter(i.lectures => items.contains(i.lectures.category));
     }
     return json;
   }
@@ -65,7 +66,7 @@ export default class List {
     for (let i of buttons) { //eslint-disable-line
       i.addEventListener('click', (e) => {
         this.toggleButton(e);
-        this.filterLectures();
+        this.load();
       });
     }
   }
