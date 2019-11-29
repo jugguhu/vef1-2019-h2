@@ -13,15 +13,23 @@
     font-size: 1rem;
     font-family: $font-heading;
     font-weight: bold;
+    box-shadow: 2px 2px $light-gray;
 
     transition:
-        background-color $transition;
+        background-color $transition,
+        box-shadow $transition;
 
     &:hover {
         background-color: $light-gray;
-    }
+        cursor: pointer;
+        box-shadow: 2px 2px #666;
+      }
 
-    &--active {
+      &--active {
         background-color: $neon-green;
+
+        &:hover {
+          background-color: $green;
+        }
+      }
     }
-}
