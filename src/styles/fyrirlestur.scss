@@ -1,27 +1,51 @@
 @import "config";
 
-main {
+main { /* stylelint-disable-line*/
   max-width: $max-width + 2*$gutter;
 }
 
 .fyrirlestur > * {
   padding: 0 $gutter;
   margin: $gutter/2 0;
+  @media (min-width: $max-width) {
+    padding: 0;
+  }
 }
 
 .fyrirlestur {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
   padding: $gutter 0;
+  margin: 0 auto;
+  flex-direction: column;
+
+  @media (min-width: $max-width) {
+    width: 23/36 * 100%;
+    padding: 0;
+  }
+
+  &__aspect {
+    position: relative;
+    height: 0;
+    padding-top: 1/2*100%;
+  }
+
   &__yt {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+
+    padding: 0 $gutter;
+    margin: $gutter/2 0;
+    @media (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   &__text {
-    line-height: 2;
     font-size: $font-size;
+    line-height: 2;
   }
 
   &__fig {
@@ -37,13 +61,17 @@ main {
   }
 
   &__quote {
-    background-color: $lighter-gray;
     padding: $gutter;
+    background-color: $lighter-gray;
+
+    @media (min-width: $max-width) {
+      margin: 0 1*-$gutter;
+    }
   }
 
   &__cite {
     display: block;
-    margin-top: $gutter; 
+    margin-top: $gutter;
     font-style: italic;
   }
 
@@ -54,5 +82,10 @@ main {
 
   &__list-item {
     margin-bottom: $gutter;
+  }
+
+  &__code {
+    font-family: $font-heading;
+    line-height: 1.25;
   }
 }

@@ -1,42 +1,47 @@
+@import "config";
+
 .header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 5*$gutter;
-    padding-bottom: 5*$gutter;
-    background-image: url(../img/header.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    font-family: $font-heading;
+  position: relative;
+  display: flex;
+  padding-top: 5*$gutter;
+  padding-bottom: 5*$gutter;
 
-    &--code {
-        background-image: url(../img/code.jpg)
-    }
+  font-family: $font-heading;
 
-    &--code2 {
-        background-image: url(../img/code2.jpg)
-    }
-    
-    &__span {
-        font-size: 1rem;
-        text-transform: uppercase;
-    }
+  flex-direction: column;
+  align-items: center;
 
-    &__title {
-        font-size: 3rem;
-    }
+  background-image: url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 
-    *:not(.protection) {
-        z-index: 1;
-    }
+  &--code {
+    background-image: url("../img/code.jpg");
+  }
+
+  &--code2 {
+    background-image: url("../img/code2.jpg");
+  }
+
+  &__span {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  *:not(.protection) {
+    z-index: 1;
+  }
 }
 
 .protection {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}

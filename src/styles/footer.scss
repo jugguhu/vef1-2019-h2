@@ -1,36 +1,42 @@
 @import "config";
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    font-family: monospace;
-    color: $black;
+  display: flex;
+  margin: 0 auto;
+  font-family: monospace;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: $black;
+  
+
+  &__finish {
+    margin: 2*$gutter auto;
     font-size: 1rem;
-
-    &__finish {
-        margin: 2*$gutter auto;
-        color: $black;
-        border: none;
-        background-color: white;
-        font-family: monospace;
-        font-size: 1rem;
-        &--finished {
-          color: $green;
-        }
-    }
-
-    &__back {
-        text-decoration: none;
-        margin-bottom: 3*$gutter;
-
-        &:hover{
-            color: $black;
-        }
+    color: $black;
+    background-color: $white;
+    font-family: monospace;
+    border: 0;
         
-        &:visited {
-            color: $black;
-        }
+    &:hover {
+      cursor: pointer;
     }
+
+    &--finished {
+      color: $neon-green;
+      }
+  }
+
+  &__back {
+    margin-bottom: 3*$gutter;
+    text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
+        
+    &:visited {
+      color: $black;
+    }
+  }
 }

@@ -9,7 +9,7 @@ export function loadSaved() {
 
 export function has(sl) {
   const arr = loadSaved();
-  for (let i=0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     if (arr[i].slug === sl) {
       return i;
     }

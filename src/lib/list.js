@@ -36,6 +36,9 @@ export default class List {
               el('span', i.category),
               el('h1', i.title)))));
       element.classList.add('fyrirlestrar__col');
+      if (!i.thumbnail) {
+        element.classList.add('noimage');
+      }
       element.querySelector('div').classList.add('fyrirlestrar__col__content');
       element.querySelector('div').querySelector('div').classList.add('fyrirlestrar__col__content__text');
       element.querySelector('span').classList.add('fyrirlestrar__col__content__category');

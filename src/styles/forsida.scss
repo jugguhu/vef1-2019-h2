@@ -1,58 +1,79 @@
 @import "config";
-.saved{
-    color: $green;
-    display: flex;
-    align-self: flex-end;
+
+.saved {
+  color: $green;
 }
+
 .fyrirlestrar {
-    margin: 0 -$gutter/2;
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  margin: 0 $gutter/2;
+  flex-wrap: wrap;
 
-    &__col {
-        display: flex;  
-        height: 15*$gutter;
-        margin-bottom: 2*$gutter;
-        @include columns(4);
+  &__col {
+    display: flex;  
+    height: 15*$gutter;
+    margin-bottom: 2*$gutter;
+  
+    @include columns(4);
+    overflow-y: hidden;
+    font-size: 1rem;
 
-        font-size: 1rem;
-        @media (max-width: 800px) {
-            @include columns(12);
-        }
-
-        a {
-            width: 100%;
-        }
-
-        &__content {
-            position: relative;
-            height: 100%;
-            background-color: $white;
-            transition:
-            background-color $transition;
-            &:hover {
-                background-color: $light-gray;
-            }
-
-            &__text {
-                position: absolute;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                padding: $gutter/2;
-                color: $black;
-                font-family: $font-heading;
-                background-color: inherit;
-                
-                &__category {
-                    font-size: 1rem;
-                    text-transform: uppercase;
-                }
-    
-                &__title {
-                    font-size: 2rem;
-                }
-            }
-        }
+    @media (max-width: 800px) {
+      @include columns(12);
     }
+
+    a {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &__content {
+      position: relative;
+      height: 100%;
+      background-color: $white;
+      transition:
+      background-color $transition;
+
+      &:hover {
+        background-color: $lighter-gray;
+      }
+  
+      img {
+        width: 100%;
+      }
+  
+      &__text {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: $gutter/2;
+        font-family: $font-heading;
+        color: $black;
+        background-color: inherit;  
+      }
+                
+      &__category {
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+    
+      &__title {
+        font-size: 2rem;
+      }
+    }      
+  }
+}
+
+.noimage {
+<<<<<<< HEAD
+  
+  @media (max-width: 800px) {
+    height: 4*$gutter;
+  }
+=======
+    @media (max-width: 800px) {
+        height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
+    }
+>>>>>>> 05572b09ce04bbe88bc0ddd8569b3595ea8442e7
 }
