@@ -6,7 +6,6 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     'class-methods-use-this': 0,
-    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement']
   },
   plugins: ['import'],
 };

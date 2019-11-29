@@ -27,7 +27,7 @@
       @include columns(12);
     }
 
-    a {/*stylelint-disable-line*/
+    &__a {/*stylelint-disable-line*/
       width: 100%;
       object-fit: contain;
     }
