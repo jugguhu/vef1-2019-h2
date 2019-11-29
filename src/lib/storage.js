@@ -8,7 +8,7 @@ export function loadSaved() {
 }
 
 export function has(sl) {
-  const arr = load();
+  const arr = loadSaved();
   for (let i=0; i<arr.length; i++) {
     if (arr[i].slug === sl) {
       return i;
@@ -18,7 +18,7 @@ export function has(sl) {
 }
 
 export function save(slug) {
-  const fin = load();
+  const fin = loadSaved();
   const n = has(slug);
 
   if (n === -1) {

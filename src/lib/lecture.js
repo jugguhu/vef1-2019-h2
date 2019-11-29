@@ -1,5 +1,5 @@
 import { empty, get_json, get_slug } from './helpers';
-import { load, save, has } from './storage';
+import { loadSaved, save, has } from './storage';
 
 const slug = get_slug();
 
