@@ -1,6 +1,6 @@
 @import "config";
 
-main {
+main { /* stylelint-disable-line*/
   max-width: $max-width + 2*$gutter;
 }
 
@@ -17,18 +17,16 @@ main {
   padding: $gutter 0;
   margin: 0 auto;
   flex-direction: column;
-  
-  
+
   @media (min-width: $max-width) {
     width: 23/36 * 100%;
     padding: 0;
   }
 
   &__aspect {
-    height: 0;
     position: relative;
+    height: 0;
     padding-top: 1/2*100%;
-    
   }
 
   &__yt {
@@ -48,7 +46,6 @@ main {
   &__text {
     font-size: $font-size;
     line-height: 2;
-    
   }
 
   &__fig {
@@ -64,8 +61,8 @@ main {
   }
 
   &__quote {
-    background-color: $lighter-gray;
     padding: $gutter;
+    background-color: $lighter-gray;
 
     @media (min-width: $max-width) {
       margin: 0 1*-$gutter;
@@ -74,7 +71,7 @@ main {
 
   &__cite {
     display: block;
-    margin-top: $gutter; 
+    margin-top: $gutter;
     font-style: italic;
   }
 
