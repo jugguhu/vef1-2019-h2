@@ -54,8 +54,9 @@
       }
                 
       &__category {
-        font-size: 1rem;
         text-transform: uppercase;
+
+        font-size: 1rem;
       }
     
       &__title {
@@ -66,14 +67,7 @@
 }
 
 .noimage {
-<<<<<<< HEAD
-  
-  @media (max-width: 800px) {
-    height: 4*$gutter;
-  }
-=======
     @media (max-width: 800px) {
         height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
     }
->>>>>>> 05572b09ce04bbe88bc0ddd8569b3595ea8442e7
 }
