@@ -3,7 +3,7 @@
     color: $green;
 }
 .fyrirlestrar {
-    margin: 0 -$gutter/2;
+    margin: 0 $gutter/2;
     display: flex;
     flex-wrap: wrap;
 
@@ -12,6 +12,7 @@
         height: 15*$gutter;
         margin-bottom: 2*$gutter;
         @include columns(4);
+        overflow-y: hidden;
 
         font-size: 1rem;
         @media (max-width: 800px) {
@@ -19,7 +20,7 @@
         }
 
         a {
-            width: 100%;
+            width: 100%;object-fit: contain;
         }
 
         &__content {
@@ -29,7 +30,11 @@
             transition:
             background-color $transition;
             &:hover {
-                background-color: $light-gray;
+                background-color: $lighter-gray;
+            }
+
+            img {
+                width: 100%;
             }
 
             &__text {
@@ -42,6 +47,8 @@
                 font-family: $font-heading;
                 background-color: inherit;
                 
+            }//laga hér
+                
                 &__category {
                     font-size: 1rem;
                     text-transform: uppercase;
@@ -50,7 +57,13 @@
                 &__title {
                     font-size: 2rem;
                 }
-            }
+            //færa hingað
         }
+    }
+}
+
+.noimage {
+    @media (max-width: 800px) {
+        height: 3.75*$gutter;//laga klasa og bæta við element þegar skjár <500px
     }
 }

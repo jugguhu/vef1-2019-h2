@@ -13,15 +13,20 @@
     font-size: 1rem;
     font-family: $font-heading;
     font-weight: bold;
+    color: black;
 
     transition:
         background-color $transition;
 
     &:hover {
-        background-color: $light-gray;
+        background-color: $lighter-gray;
+        cursor: pointer;
     }
 
     &--active {
         background-color: $neon-green;
+        &:hover {
+            background-color: $neon-green;
+        }
     }
 }
