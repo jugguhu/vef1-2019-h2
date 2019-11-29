@@ -14,9 +14,11 @@ main {
 
 .fyrirlestur {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
   padding: $gutter 0;
+  margin: 0 auto;
+  flex-direction: column;
+  
+  
   @media (min-width: $max-width) {
     width: 23/36 * 100%;
     padding: 0;
@@ -24,8 +26,9 @@ main {
 
   &__aspect {
     height: 0;
-    padding-top: 1/2*100%;
     position: relative;
+    padding-top: 1/2*100%;
+    
   }
 
   &__yt {
@@ -43,8 +46,9 @@ main {
   }
 
   &__text {
-    line-height: 2;
     font-size: $font-size;
+    line-height: 2;
+    
   }
 
   &__fig {
@@ -62,6 +66,7 @@ main {
   &__quote {
     background-color: $lighter-gray;
     padding: $gutter;
+
     @media (min-width: $max-width) {
       margin: 0 1*-$gutter;
     }
