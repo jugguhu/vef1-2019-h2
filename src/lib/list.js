@@ -8,13 +8,14 @@ export default class List {
   }
 
   load() {
-    // empty(this.container);
-    this.getLectures()
+    empty(this.container);
+    this.getLectures(this.lectures)
+      .then(data => this.filterLectures(data))
       .then(data => this.showLectures(data.lectures));
   }
 
-  getLectures() {
-    return fetch(this.lectures)
+  getLectures(json) {
+    return fetch(json)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Non 200 status');
@@ -44,16 +45,28 @@ export default class List {
     }
   }
 
+  filterLectures(json) {
+    // empty(this.container);
+    const item = document.querySelectorAll('.button');
+    const array = json.lectures;
+    for (let i of item) { //eslint-disable-line
+      console.log(i.textContent);
+    }
+    return json;
+  }
+
   toggleButton(e) {
     const button = e.target;
     button.classList.toggle('button--active');
-    console.log(button);
   }
 
   init(page) {
     const buttons = page.querySelectorAll('.button');
-    for(let i of buttons){ //eslint-disable-line
-      i.addEventListener('click', e => this.toggleButton(e));
+    for (let i of buttons) { //eslint-disable-line
+      i.addEventListener('click', (e) => {
+        this.toggleButton(e);
+        this.filterLectures();
+      });
     }
   }
 }
