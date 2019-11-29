@@ -16,10 +16,14 @@
         background-color: white;
         font-family: monospace;
         font-size: 1rem;
+        &--finished {
+          color: $green;
+        }
     }
 
     &__back {
         text-decoration: none;
+        margin-bottom: 3*$gutter;
 
         &:hover{
             color: $black;
