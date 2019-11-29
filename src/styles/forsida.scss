@@ -6,7 +6,6 @@
     flex-wrap: wrap;
 
     &__col {
-        position: relative;
         display: flex;  
         height: 15*$gutter;
         margin-bottom: 2*$gutter;
@@ -17,33 +16,33 @@
             @include columns(12);
         }
 
-        &__link {
+        a {
             width: 100%;
-            text-decoration: none;
-        }
-
-        &__image {
-            width: 100%;
-            background: black;
-            background-image: url(../../img/thumb1.jpg)
         }
 
         &__content {
-            position: absolute;
-            right: $gutter/2;
-            left: $gutter/2;
-            bottom: 0;
-            padding: $gutter/2;
-            color: $black;
-            font-family: $font-heading;
             background-color: $white;
-            &__category {
-                font-size: 1rem;
-                text-transform: uppercase;
-            }
-
-            &__title {
-                font-size: 2rem;
+            position: relative;
+            height: 100%;
+    
+            &__text {
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                padding: $gutter/2;
+                color: $black;
+                font-family: $font-heading;
+                background-color: $white;
+                
+                &__category {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+    
+                &__title {
+                    font-size: 2rem;
+                }
             }
         }
     }
