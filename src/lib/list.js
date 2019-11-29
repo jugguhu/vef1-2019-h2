@@ -1,4 +1,5 @@
-import { empty, get_json, el } from './helpers';
+import { empty, el } from './helpers';
+import { loadSaved } from './storage';
 
 export default class List {
   constructor() {
@@ -11,7 +12,8 @@ export default class List {
     empty(this.container);
     this.getLectures(this.lectures)
       .then(data => this.filterLectures(data))
-      .then(data => this.showLectures(data));
+      .then(data => this.showLectures(data))
+      .then(data => this.showSaved(data));
   }
 
   getLectures(json) {
@@ -44,11 +46,13 @@ export default class List {
       }
       element.querySelector('a').setAttribute('href', lectureURL);
       document.querySelector('.fyrirlestrar').appendChild(element);
+      if (this.isSaved(i.slug)) {
+        element.classList.add('saved');
+      }
     }
   }
 
   filterLectures(json) {
-    // empty(this.container);
     const buttons = document.querySelectorAll('.button');
     const items = Array.from(buttons).filter(i => i.classList.contains('button--active'))
       .map(i => i.textContent.toLowerCase());
@@ -56,6 +60,14 @@ export default class List {
       return json.lectures.filter(i => items.includes(i.category));
     }
     return json.lectures;
+  }
+
+  isSaved(outerSlug) {
+    const saved = loadSaved();
+    for (let i of saved) { //eslint-disable-line
+      if (i.slug === outerSlug) return true;
+    }
+    return false;
   }
 
   toggleButton(e) {

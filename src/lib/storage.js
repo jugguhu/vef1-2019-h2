@@ -1,6 +1,6 @@
 const LOCALSTORAGE_KEY = 'finished_lectures';
 
-export function load() {
+export function loadSaved() {
   const finJson = localStorage.getItem(LOCALSTORAGE_KEY);
   const fin = JSON.parse(finJson) || [];
 
@@ -8,7 +8,7 @@ export function load() {
 }
 
 export function finished(sl) {
-  const fin = load();
+  const fin = loadSaved();
   for (const ob of fin) {
     if (ob.slug === sl) {
       if (ob.value === 1) {
@@ -29,7 +29,7 @@ function has(arr, sl) {
 }
 
 export function desave(slug) {
-  const fin = load();
+  const fin = loadSaved();
 
   for (const sl of fin) {
     if (sl.slug === slug) {
@@ -40,7 +40,7 @@ export function desave(slug) {
 }
 
 export function save(slug) {
-  const fin = load();
+  const fin = loadSaved();
   const value = 1;
 
   if (!has(fin, slug)) {
