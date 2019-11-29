@@ -1,13 +1,12 @@
 @import "config";
 
 .saved {
-  color: $green;
-  font-size: $font-size*3;
   position: absolute;
-  right: 5%;
   top: 15%;
+  right: 5%;
   bottom: 50%;
-  text-align: center;
+  font-size: $font-size*3;
+  color: $green;
 }
 
 .fyrirlestrar {
@@ -16,10 +15,10 @@
   flex-wrap: wrap;
 
   &__col {
-    display: flex;  
+    display: flex;
     height: 15*$gutter;
     margin-bottom: 2*$gutter;
-  
+
     @include columns(4);
     overflow-y: hidden;
     font-size: 1rem;
@@ -37,17 +36,16 @@
       position: relative;
       height: 100%;
       background-color: $white;
-      transition:
-      background-color $transition;
+      transition: background-color $transition;
 
       &:hover {
         background-color: $lighter-gray;
       }
-  
+
       img {
         width: 100%;
       }
-  
+
       &__text {
         position: absolute;
         right: 0;
@@ -56,23 +54,23 @@
         padding: $gutter/2;
         font-family: $font-heading;
         color: $black;
-        background-color: inherit;  
+        background-color: inherit;
       }
-                
+
       &__category {
-        text-transform: uppercase;
         font-size: 1rem;
+        text-transform: uppercase;
       }
-    
+
       &__title {
         font-size: 2rem;
       }
-    }      
+    }
   }
 }
 
 .noimage {
-    @media (max-width: 800px) {
-        height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
-    }
+  @media (max-width: 800px) {
+    height: 4.25*$gutter;//laga klasa og bæta við element þegar skjár <500px
+  }
 }
